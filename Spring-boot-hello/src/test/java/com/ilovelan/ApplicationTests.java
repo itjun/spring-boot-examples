@@ -1,4 +1,4 @@
-package com.ilovelan.ispringboot;
+package com.ilovelan;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,10 +7,11 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class ISpringBootApplicationTests {
+public class ApplicationTests {
 
-	@Test
-	public void contextLoads() {
-	}
+    @Test
+    public void contextLoads() {
+        System.out.println("Hello, Spring Boot 2.0!");
+    }
 
 }
