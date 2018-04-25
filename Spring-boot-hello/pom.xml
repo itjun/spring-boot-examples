@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.ilovelan</groupId>
-    <artifactId>i-spring-boot</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <artifactId>spring-boot-hello</artifactId>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>i-spring-boot</name>
+    <name>spring-boot-hello</name>
     <description>Demo project for Spring Boot</description>
 
     <parent>
@@ -29,7 +29,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -45,6 +48,5 @@
             </plugin>
         </plugins>
     </build>
-
 
 </project>
