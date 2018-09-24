@@ -15,7 +15,7 @@ import java.util.List;
 @RequestMapping("/readingList")
 public class ReadingListController {
 
-    private static final String READER = "jake";
+    private static final String DEFAULT_READER = "jake";
     private ReadingListRepository readingListRepository;
 
     @Autowired
@@ -26,7 +26,7 @@ public class ReadingListController {
     @RequestMapping(value = "/{reader}", method = RequestMethod.GET)
     public String readerBooks(@PathVariable("reader") String reader, Model model) {
         if (reader == null || "".equals(reader)) {
-            reader = READER;
+            reader = DEFAULT_READER;
         }
         List<Book> readingList = readingListRepository.findByReader(reader);
         if (readingList != null) {
