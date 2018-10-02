@@ -1,6 +1,7 @@
 package com.ilovelan;
 
-import com.ilovelan.hello.HelloController;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+
 import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Test;
@@ -11,7 +12,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import com.ilovelan.hello.web.HelloController;
 
 @SpringBootTest
 public class HelloControllerTest {
@@ -25,10 +26,8 @@ public class HelloControllerTest {
 
     @Test
     public void getHello() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.post("/hello?name=Spring")
-                .accept(MediaType.APPLICATION_JSON_UTF8)).andDo(print())
-                .andExpect(MockMvcResultMatchers.content().string(Matchers.containsString("Spring")));
+        mockMvc.perform(MockMvcRequestBuilders.post("/hello?name=Spring").accept(MediaType.APPLICATION_JSON_UTF8))
+                .andDo(print()).andExpect(MockMvcResultMatchers.content().string(Matchers.containsString("Spring")));
     }
-
 
 }

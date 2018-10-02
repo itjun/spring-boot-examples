@@ -1,4 +1,4 @@
-package com.ilovelan.hello;
+package com.ilovelan.hello.web;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
