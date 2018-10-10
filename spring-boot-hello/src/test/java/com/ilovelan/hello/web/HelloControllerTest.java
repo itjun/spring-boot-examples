@@ -1,4 +1,4 @@
-package com.ilovelan;
+package com.ilovelan.hello.web;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 

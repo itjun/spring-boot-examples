@@ -1,4 +1,4 @@
-package com.ilovelan.hello.web;
+package com.ilovelan.hello.model;
 
 public class User {
     private String code;
