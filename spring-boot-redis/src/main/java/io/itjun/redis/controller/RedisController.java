@@ -45,4 +45,13 @@ public class RedisController {
         return redisTemplate.keys(pattern);
     }
 
+    @GetMapping("lpush/{key}/{value}")
+    public Long lpush(@PathVariable("key") String key, @PathVariable("value") String value) {
+        return redisTemplate.opsForList().leftPush(key, value);
+    }
+
+    @GetMapping("rpop/{key}")
+    public String rpop(@PathVariable("key") String key) {
+        return redisTemplate.opsForList().rightPop(key);
+    }
 }
