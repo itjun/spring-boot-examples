@@ -13,6 +13,8 @@ public class ActiveMQServer {
 
     @JmsListener(destination = "itjun")
     public void receive(String message) {
+        if (count == 10000)
+            count = 0;
         log.info("收到 {},count {}", message, count++);
     }
 
