@@ -12,7 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @SpringBootApplication
-public class ActivemqApplication {
+public class ActiveMQApplication {
 
     @Autowired
     ActiveMQClient client;
@@ -29,7 +29,7 @@ public class ActivemqApplication {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(ActivemqApplication.class, args);
+        SpringApplication.run(ActiveMQApplication.class, args);
     }
 
 }
