@@ -1,13 +1,13 @@
-package io.itjun.readinglist;
+package io.itjun.mysql;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Application {
+public class MysqlApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(MysqlApplication.class, args);
     }
 
 }

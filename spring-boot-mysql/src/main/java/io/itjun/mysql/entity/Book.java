@@ -1,6 +1,11 @@
-package io.itjun.readinglist.entity;
+package io.itjun.mysql.entity;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Index;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "reading_book")

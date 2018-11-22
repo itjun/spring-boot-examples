@@ -7,7 +7,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StopWatch;
 
-import io.itjun.activemq.client.ActiveMQClient;
+import io.itjun.activemq.client.ActiveMQProducer;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -15,7 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 public class AutoSendActiveMQ {
 
     @Autowired
-    ActiveMQClient client;
+    ActiveMQProducer client;
 
     @PostConstruct
     @Scheduled(fixedDelay = 3 * 1000)

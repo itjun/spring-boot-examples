@@ -1,8 +1,8 @@
-package io.itjun.readinglist.entity;
-
-import org.springframework.data.jpa.repository.JpaRepository;
+package io.itjun.mysql.entity;
 
 import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ReadingListRepository extends JpaRepository<Book, Long> {
 
