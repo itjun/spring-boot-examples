@@ -22,9 +22,8 @@ public class AutoSendActiveMQ {
     public void init() {
         StopWatch stopWatch = new StopWatch();
         stopWatch.start();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 10; i++)
             client.send("----itjun-----");
-        }
         stopWatch.stop();
         log.info("发送消息耗时 {}", stopWatch.getTotalTimeMillis());
     }
