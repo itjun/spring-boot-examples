@@ -18,7 +18,7 @@ public class AutoSendActiveMQ {
     ActiveMQProducer producer;
 
     @PostConstruct
-    @Scheduled(fixedRate = 100)
+    @Scheduled(fixedDelay = 3 * 1000)
     public void run() {
         StopWatch stopWatch = new StopWatch();
         stopWatch.start();
