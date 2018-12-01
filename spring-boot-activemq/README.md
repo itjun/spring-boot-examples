@@ -1,4 +1,4 @@
-# 运行说明
+# ActiveMQ
 
 ## 安装参考
 
@@ -18,3 +18,4 @@ spring.activemq.broker-url=tcp://localhost:61616
 spring.activemq.user=admin
 spring.activemq.password=admin
 ```
+
