@@ -59,11 +59,7 @@ public class RedisController {
 
     @GetMapping("ttl/{key}")
     public Long ttl(@PathVariable("key") String key) {
-        return redisTemplate.execute(new RedisCallback<Long>() {
-            public Long doInRedis(RedisConnection connection) {
-                return connection.ttl(key.getBytes());
-            }
-        });
+        return redisTemplate.execute((RedisCallback<Long>) connection -> connection.ttl(key.getBytes()));
     }
 
 }
