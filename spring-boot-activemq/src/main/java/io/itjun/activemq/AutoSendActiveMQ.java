@@ -18,12 +18,12 @@ public class AutoSendActiveMQ {
     ActiveMQProducer producer;
 
     @PostConstruct
-    @Scheduled(fixedDelay = 3 * 1000)
+    @Scheduled(fixedRate = 100)
     public void run() {
         StopWatch stopWatch = new StopWatch();
         stopWatch.start();
-        for (int i = 0; i < 10; i++)
-            producer.send("----itjun-----");
+        for (int i = 0; i < 10000; i++)
+            producer.send("----itjun.activemq-----");
         stopWatch.stop();
         log.info("发送消息耗时 {}", stopWatch.getTotalTimeMillis());
     }
