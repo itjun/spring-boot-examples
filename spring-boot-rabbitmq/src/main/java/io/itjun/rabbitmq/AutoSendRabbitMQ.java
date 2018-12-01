@@ -1,21 +1,20 @@
-package io.itjun.activemq;
+package io.itjun.rabbitmq;
 
-import javax.annotation.PostConstruct;
-
+import io.itjun.rabbitmq.producter.RabbitMQProducer;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StopWatch;
 
-import io.itjun.activemq.producer.ActiveMQProducer;
-import lombok.extern.slf4j.Slf4j;
+import javax.annotation.PostConstruct;
 
 @Slf4j
 @Component
-public class AutoSendActiveMQ {
+public class AutoSendRabbitMQ {
 
     @Autowired
-    ActiveMQProducer producer;
+    RabbitMQProducer producer;
 
     @PostConstruct
     @Scheduled(fixedDelay = 3 * 1000)

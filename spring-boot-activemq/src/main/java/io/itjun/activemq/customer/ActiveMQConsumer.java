@@ -1,4 +1,4 @@
-package io.itjun.activemq.server;
+package io.itjun.activemq.customer;
 
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;
@@ -9,13 +9,9 @@ import lombok.extern.slf4j.Slf4j;
 @Component
 public class ActiveMQConsumer {
 
-    private long count;
-
     @JmsListener(destination = "itjun")
     public void receive(String message) {
-        if (count == 10000)
-            count = 0;
-        log.info("收到 {},count {}", message, count++);
+        log.info("收到 {}", message);
     }
 
 }

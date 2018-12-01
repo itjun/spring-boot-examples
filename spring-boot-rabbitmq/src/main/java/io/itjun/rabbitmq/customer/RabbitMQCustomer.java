@@ -12,4 +12,5 @@ public class RabbitMQCustomer {
     public void receive(String message) {
         log.info("收到的 message 是 {}", message);
     }
+
 }
