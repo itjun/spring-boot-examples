@@ -1,15 +1,14 @@
 package io.itjun.redis.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.connection.RedisConnection;
 import org.springframework.data.redis.core.RedisCallback;
-import org.springframework.data.redis.core.SessionCallback;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -63,4 +62,18 @@ public class RedisController {
         return redisTemplate.execute((RedisCallback<Long>) connection -> connection.ttl(key.getBytes()));
     }
 
+    @RequestMapping("pipeline")
+    public Long pipeline() {
+        long start = System.currentTimeMillis();
+        redisTemplate.executePipelined((RedisCallback<List>) connection -> {
+            for (int i = 0; i < 100000; i++) {
+                String key = "pipeline_" + i;
+                String value = "value" + i;
+                connection.set(key.getBytes(), value.getBytes());
+                connection.get(key.getBytes());
+            }
+            return null;
+        });
+        return System.currentTimeMillis() - start;
+    }
 }
