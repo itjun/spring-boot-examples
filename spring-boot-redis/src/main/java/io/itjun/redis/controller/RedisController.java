@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Random;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -74,6 +75,16 @@ public class RedisController {
             }
             return null;
         });
+
         return System.currentTimeMillis() - start;
+    }
+    public static int randInt(int min, int max) {
+        Random rand = new Random();
+        int randomNum = rand.nextInt((max - min) + 1) + min;
+        return randomNum;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(randInt(5,10));
     }
 }
