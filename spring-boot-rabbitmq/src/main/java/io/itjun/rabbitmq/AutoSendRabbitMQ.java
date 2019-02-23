@@ -17,7 +17,7 @@ public class AutoSendRabbitMQ {
     RabbitMQProducer producer;
 
     @PostConstruct
-    @Scheduled(fixedDelay = 60 * 1000)
+    @Scheduled(fixedDelay = 30 * 1000)
     public void run() {
         StopWatch stopWatch = new StopWatch();
         stopWatch.start();
