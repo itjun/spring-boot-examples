@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 public class RabbitMQCustomer {
 
     @RabbitListener(queues = "itjun")
-    public void receive(String message) {
+    private void receive(String message) {
         log.info("收到的 message 是 {}", message);
     }
 
