@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>io.itjun</groupId>
+    <artifactId>sping-boot-examples</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>spring-boot-hello</module>
+        <module>spring-boot-restful</module>
+        <module>spring-boot-jsp</module>
+        <module>spring-boot-mysql</module>
+        <module>spring-boot-mongodb</module>
+        <module>spring-boot-redis</module>
+        <module>spring-boot-actuator</module>
+        <module>spring-boot-activemq</module>
+        <module>spring-boot-rabbitmq</module>
+    </modules>
+
+</project>
