@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.itjun</groupId>
-    <artifactId>sping-boot-jsp</artifactId>
+    <artifactId>spring-boot-jsp</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>sping-boot-jsp</name>
+    <name>spring-boot-jsp</name>
     <description>Demo project for Spring Boot Jsp</description>
 
     <parent>
@@ -55,6 +55,5 @@
             </plugin>
         </plugins>
     </build>
-
 
 </project>

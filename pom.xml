@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.itjun</groupId>
-    <artifactId>sping-boot-examples</artifactId>
+    <artifactId>spring-boot-examples</artifactId>
     <version>1.0.0</version>
     <packaging>pom</packaging>
 
