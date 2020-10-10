@@ -19,9 +19,6 @@ import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import io.itjun.restful.HelloController;
-import io.itjun.restful.UserController;
-
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
 public class ApplicationTests {
@@ -30,7 +27,7 @@ public class ApplicationTests {
 
     @Before
     public void setUp() throws Exception {
-        mvc = MockMvcBuilders.standaloneSetup(new HelloController(), new UserController()).build();
+        mvc = MockMvcBuilders.standaloneSetup(new UserController(), new UserController()).build();
     }
 
     @Test

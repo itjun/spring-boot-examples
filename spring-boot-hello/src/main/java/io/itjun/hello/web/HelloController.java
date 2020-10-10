@@ -10,7 +10,7 @@ public class HelloController {
     @Value("${server.port}")
     private String port;
 
-    @RequestMapping("/hello")
+    @RequestMapping("/")
     public String hello() {
         System.out.println(this.port);
         return "Hello, Spring Boot 2.0 !";

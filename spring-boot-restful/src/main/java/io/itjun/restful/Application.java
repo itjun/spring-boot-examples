@@ -14,8 +14,8 @@ public class Application {
     }
 
     @RequestMapping("/")
-    public String start(){
-        return "Spring Boot 2.0 正常启动";
+    public String start() {
+        return "Spring Boot 2.0 正常启动！";
     }
 
 }
