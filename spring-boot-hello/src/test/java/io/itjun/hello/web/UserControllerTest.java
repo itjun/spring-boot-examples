@@ -1,7 +1,5 @@
 package io.itjun.hello.web;
 
-import java.io.UnsupportedEncodingException;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -11,7 +9,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import io.itjun.hello.web.HelloController;
+import java.io.UnsupportedEncodingException;
 
 @SpringBootTest
 public class UserControllerTest {

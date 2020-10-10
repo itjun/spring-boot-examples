@@ -78,6 +78,7 @@ public class RedisController {
 
         return System.currentTimeMillis() - start;
     }
+
     public static int randInt(int min, int max) {
         Random rand = new Random();
         int randomNum = rand.nextInt((max - min) + 1) + min;
@@ -85,6 +86,6 @@ public class RedisController {
     }
 
     public static void main(String[] args) {
-        System.out.println(randInt(5,10));
+        System.out.println(randInt(5, 10));
     }
 }

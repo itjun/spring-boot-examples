@@ -1,7 +1,5 @@
 package io.itjun.hello.web;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-
 import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,7 +10,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import io.itjun.hello.web.HelloController;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 
 @SpringBootTest
 public class HelloControllerTest {
