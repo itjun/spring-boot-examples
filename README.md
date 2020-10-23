@@ -1,5 +1,7 @@
 # spring-boot-examples
 
+[![Build Status](https://travis-ci.com/itjun/spring-boot-examples.svg?branch=main)](https://travis-ci.com/github/itjun/spring-boot-examples)
+
 Spring Boot 常用组件的使用示例，力求简单、实用、优雅
 
 ## Spring Boot 2.0
