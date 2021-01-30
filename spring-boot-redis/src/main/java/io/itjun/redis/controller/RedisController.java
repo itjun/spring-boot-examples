@@ -20,6 +20,13 @@ public class RedisController {
     @Autowired
     StringRedisTemplate redisTemplate;
 
+    // wrk -t1 -c1 -d1s http://127.0.0.1:8080/redis/incr
+    @GetMapping("incr")
+    public Long incr() {
+        long value = redisTemplate.opsForValue().increment("911001.OC.2021-01-30");
+        return value;
+    }
+
     @GetMapping("set/{key}/{value}")
     public String set(@PathVariable("key") String key, @PathVariable("value") String value) {
         redisTemplate.opsForValue().set(key, value);
