@@ -1,6 +1,7 @@
 package io.itjun.redis.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.data.redis.core.RedisCallback;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +16,18 @@ import java.util.concurrent.TimeUnit;
 
 @RestController
 @RequestMapping("/redis")
+//@Scope("prototype")
+@Scope("session")
 public class RedisController {
+
+    public long invoiceCount = 0;
+    public static long staInvoiceCount = 0;
+
+    @RequestMapping("/")
+    public String index() {
+        return "Greetings from Spring Boot! staInvoiceCount = " + String.valueOf(++staInvoiceCount)
+                + " , invoiceCount= " + String.valueOf(++invoiceCount);
+    }
 
     @Autowired
     StringRedisTemplate redisTemplate;
