@@ -20,12 +20,12 @@ import java.util.concurrent.TimeUnit;
 @Scope("session")
 public class RedisController {
 
+    public static long staticCount = 0;
     public long invoiceCount = 0;
-    public static long staInvoiceCount = 0;
 
     @RequestMapping("/")
     public String index() {
-        return "Greetings from Spring Boot! staInvoiceCount = " + String.valueOf(++staInvoiceCount)
+        return "Greetings from Spring Boot! staticCount = " + String.valueOf(++staticCount)
                 + " , invoiceCount= " + String.valueOf(++invoiceCount);
     }
 
