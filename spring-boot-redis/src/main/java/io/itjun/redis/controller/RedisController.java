@@ -1,5 +1,10 @@
 package io.itjun.redis.controller;
 
+import java.util.List;
+import java.util.Random;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.data.redis.core.RedisCallback;
@@ -8,16 +13,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
-import java.util.Random;
-import java.util.Set;
-import java.util.concurrent.TimeUnit;
+import org.springframework.web.context.WebApplicationContext;
 
 @RestController
 @RequestMapping("/redis")
-//@Scope("prototype")
-@Scope("session")
+//@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+@Scope(WebApplicationContext.SCOPE_SESSION)
 public class RedisController {
 
     public static long staticCount = 0;
