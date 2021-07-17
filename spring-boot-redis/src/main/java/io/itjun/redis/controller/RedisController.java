@@ -17,7 +17,7 @@ import java.util.concurrent.TimeUnit;
 @RestController
 @RequestMapping("/redis")
 //@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
-@Scope(WebApplicationContext.SCOPE_SESSION)
+//@Scope(WebApplicationContext.SCOPE_SESSION)
 public class RedisController {
 
     public static long staticCount = 0;
@@ -34,9 +34,8 @@ public class RedisController {
 
     // wrk -t1 -c1 -d1s http://127.0.0.1:8080/redis/incr
     @PostMapping("incr")
-    public Long incr() {
-        long value = redisTemplate.opsForValue().increment("911001.OC.2021-01-30");
-        return value;
+    public Long incr(String key) {
+        return redisTemplate.opsForValue().increment(key);
     }
 
     @PostMapping("set")
@@ -52,8 +51,8 @@ public class RedisController {
     }
 
     @PostMapping("get")
-    public String get(String key) {
-        return "key=" + key + ",value=" + redisTemplate.opsForValue().get(key);
+    public Object get(String key) {
+        return redisTemplate.opsForValue().get(key);
     }
 
     @PostMapping("delete")
