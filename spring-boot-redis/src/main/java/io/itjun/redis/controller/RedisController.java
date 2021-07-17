@@ -1,19 +1,18 @@
 package io.itjun.redis.controller;
 
-import java.util.List;
-import java.util.Random;
-import java.util.Set;
-import java.util.concurrent.TimeUnit;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.data.redis.core.RedisCallback;
 import org.springframework.data.redis.core.StringRedisTemplate;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.WebApplicationContext;
+
+import java.util.List;
+import java.util.Random;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 @RestController
 @RequestMapping("/redis")
@@ -34,52 +33,51 @@ public class RedisController {
     StringRedisTemplate redisTemplate;
 
     // wrk -t1 -c1 -d1s http://127.0.0.1:8080/redis/incr
-    @GetMapping("incr")
+    @PostMapping("incr")
     public Long incr() {
         long value = redisTemplate.opsForValue().increment("911001.OC.2021-01-30");
         return value;
     }
 
-    @GetMapping("set/{key}/{value}")
-    public String set(@PathVariable("key") String key, @PathVariable("value") String value) {
+    @PostMapping("set")
+    public String set(String key, String value) {
         redisTemplate.opsForValue().set(key, value);
         return key + "," + value;
     }
 
-    @GetMapping("setex/{key}/{value}/{timeout}")
-    public String setex(@PathVariable("key") String key, @PathVariable("value") String value,
-                        @PathVariable("timeout") long timeout) {
+    @PostMapping("setex")
+    public String setex(String key, String value, long timeout) {
         redisTemplate.opsForValue().set(key, value, timeout, TimeUnit.SECONDS);
         return key + "," + value + "," + timeout;
     }
 
-    @GetMapping("get/{key}")
-    public String get(@PathVariable("key") String key) {
+    @PostMapping("get")
+    public String get(String key) {
         return "key=" + key + ",value=" + redisTemplate.opsForValue().get(key);
     }
 
-    @GetMapping("delete/{key}")
-    public Boolean delete(@PathVariable("key") String key) {
+    @PostMapping("delete")
+    public Boolean delete(String key) {
         return redisTemplate.delete(key);
     }
 
-    @GetMapping("keys/{pattern}")
-    public Set<String> list(@PathVariable("pattern") String pattern) {
+    @PostMapping("keys")
+    public Set<String> keys(String pattern) {
         return redisTemplate.keys(pattern);
     }
 
-    @GetMapping("lpush/{key}/{value}")
-    public Long lPush(@PathVariable("key") String key, @PathVariable("value") String value) {
+    @PostMapping("lpush")
+    public Long lPush(String key, String value) {
         return redisTemplate.opsForList().leftPush(key, value);
     }
 
-    @GetMapping("rpop/{key}")
-    public String rPop(@PathVariable("key") String key) {
+    @PostMapping("rpop")
+    public String rPop(String key) {
         return redisTemplate.opsForList().rightPop(key);
     }
 
-    @GetMapping("ttl/{key}")
-    public Long ttl(@PathVariable("key") String key) {
+    @PostMapping("ttl")
+    public Long ttl(String key) {
         return redisTemplate.execute((RedisCallback<Long>) connection -> connection.ttl(key.getBytes()));
     }
 
