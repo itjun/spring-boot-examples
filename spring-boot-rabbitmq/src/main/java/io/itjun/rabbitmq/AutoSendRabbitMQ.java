@@ -2,8 +2,8 @@ package io.itjun.rabbitmq;
 
 import io.itjun.rabbitmq.producter.RabbitMQProducer;
 import jakarta.annotation.PostConstruct;
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StopWatch;
@@ -12,8 +12,7 @@ import org.springframework.util.StopWatch;
 @Component
 public class AutoSendRabbitMQ {
 
-    @Autowired
-    RabbitMQProducer producer;
+    private RabbitMQProducer producer;
 
     @PostConstruct
     @Scheduled(fixedDelay = 30 * 1000)
@@ -25,6 +24,11 @@ public class AutoSendRabbitMQ {
         }
         stopWatch.stop();
         log.info("发送消息耗时 {}", stopWatch.getTotalTimeMillis());
+    }
+
+    @Resource
+    public void setProducer(RabbitMQProducer producer) {
+        this.producer = producer;
     }
 
 }
