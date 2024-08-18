@@ -1,13 +1,12 @@
 package io.itjun.rabbitmq;
 
 import io.itjun.rabbitmq.producter.RabbitMQProducer;
+import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StopWatch;
-
-import javax.annotation.PostConstruct;
 
 @Slf4j
 @Component
