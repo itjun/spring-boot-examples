@@ -14,4 +14,5 @@ public class RabbitMQProducer {
     public void send(String message) {
         rabbitTemplate.convertAndSend(RabbitMQConfig.Queue_Itjun, message);
     }
+
 }
