@@ -18,6 +18,7 @@
         <module>spring-boot-actuator</module>
         <module>spring-boot-activemq</module>
         <module>spring-boot-rabbitmq</module>
+        <module>spring-boot-event</module>
     </modules>
 
 </project>
